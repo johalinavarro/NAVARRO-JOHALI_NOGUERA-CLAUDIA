@@ -110,5 +110,6 @@ public class OdontologoService implements IOdontologoService {
     private void configureMapping() {
         modelMapper.typeMap(OdontologoEntradaDto.class, Odontologo.class);
         modelMapper.typeMap(Odontologo.class, OdontologoSalidaDto.class);
+        modelMapper.typeMap(OdontologoModificacionEntradaDto.class, Odontologo.class);
     }
 }

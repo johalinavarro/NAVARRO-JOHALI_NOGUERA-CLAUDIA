@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
     const formulario = document.forms[0];
-    const url = "http://localhost:8080/odontologos/registrar";
+    const url = "http://localhost:8081/odontologos/registrar";
     formulario.addEventListener("submit", function (e) {
         e.preventDefault();
         registrarOdontologo();
@@ -29,7 +29,7 @@ window.addEventListener("load", function () {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        "Content-type": "application/json;",
         },
     };
 

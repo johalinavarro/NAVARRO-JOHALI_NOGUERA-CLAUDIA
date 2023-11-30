@@ -31,6 +31,14 @@ class PacienteServiceTest {
 
     @Test
     @Order(2)
+    void deberiaDevolverUnaListaDePacientes(){
+        List<PacienteSalidaDto> pacientesDto = pacienteService.listarPacientes();
+
+        assertFalse(pacientesDto.isEmpty());
+    }
+
+    @Test
+    @Order(3)
     void alIntentarEliminarUnPacienteConId1YaEliminado_deberiaLanzarUnaResourceNotoundException(){
 
         try{
@@ -40,14 +48,6 @@ class PacienteServiceTest {
         }
 
         assertThrows(ResourceNotFoundException.class, () -> pacienteService.eliminarPaciente(1L));
-    }
-
-    @Test
-    @Order(3)
-    void deberiaDevolverUnaListaDePacientes(){
-        List<PacienteSalidaDto> pacientesDto = pacienteService.listarPacientes();
-
-        assertTrue(pacientesDto.isEmpty());
     }
 
 }
